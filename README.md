@@ -1,9 +1,9 @@
 # explore-github-action
 Explore GitHub Workflow  
 **Workflow**:  
-    The overall automated process that defines when and how different actions should be executed, triggered by events like pushing code to a repository or creating a pull request.  
-**Action**:
-	An individual, modular step within a workflow, performing a specific task like running a unit test, deploying to a server, or checking code quality. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The overall automated process that defines when and how different actions should be executed, triggered by events like pushing code to a repository or creating a pull request.  
+**Action**:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An individual, modular step within a workflow, performing a specific task like running a unit test, deploying to a server, or checking code quality. 
 **How they work together**:
 	YAML configuration:
 Both workflows and actions are defined using YAML syntax within the .github/workflows directory in your repository. 
