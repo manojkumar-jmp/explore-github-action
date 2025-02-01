@@ -19,6 +19,6 @@ jobs:
        # Runs command(s) using the runners shell and gets context from the github object
        - name: Greet
          run:
-          echo "Hello Workflow"
+          echo "Hello Workflow from branch"
         
      
