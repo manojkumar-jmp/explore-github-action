@@ -40,8 +40,11 @@ Triggering workflows:
 	  - If any of these tasks don't pass, report the issue to the proper individual or team for resolution.
   
 
-**Types of GitHub actions**
-There are three types of GitHub actions: container actions, JavaScript actions, and composite actions.
+**Types of GitHub actions**  
+There are three types of GitHub actions:
+- Container actions
+- JavaScript actions
+- Composite actions.
 
 With container actions, the environment is part of the action's code. These actions can only be run in a Linux environment that GitHub hosts. Container actions support many different languages.
 
@@ -51,15 +54,15 @@ Composite actions allow you to combine multiple workflow steps within one action
 
 A workflow must have at least one job. A job is a section of the workflow associated with a runner. A runner can be GitHub-hosted or self-hosted, and the job can run on a machine or in a container. 
 
-**Workflows**
+**Workflows**  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A workflow is an automated process that you add to your repository. A workflow needs to have at least one job, and different events can trigger it. You can use it to build, test, package, release, or deploy your repository's project on GitHub.
 
-**Jobs**
+**Jobs**  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The job is the first major component within the workflow. A job is a section of the workflow that will be associated with a runner. A runner can be GitHub-hosted or self-hosted, and the job can run on a machine or in a container. You'll specify the runner with the runs-on: attribute. Here, you're telling the workflow to run this job on ubuntu-latest. We'll talk more about runners in the next unit.
 
-**Steps**
+**Steps**  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A step is an individual task that can run commands in a job. In our preceding example, the step uses the action actions/checkout@v2 to check out the repository. What's interesting is the uses: ./action-a value. This is the path to the container action that you'll build in an action.yml file.
 
-**Actions**
+**Actions**  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The actions inside your workflow are the standalone commands that are executed. These standalone commands can reference GitHub actions such as using your own custom actions, or community actions like the one we use in the preceding example, actions/checkout@v2. You can also run commands such as run: npm install -g bats to execute a command on the runner.
 https://learn.microsoft.com/en-us/training/modules/github-actions-automate-tasks/2c-configure-github-actions-workflow
