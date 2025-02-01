@@ -12,13 +12,13 @@ jobs:
      # Display name for the job
      name: "Say Hello to Workflow"
      # The type of runner that the job will run on, in this case a Linus hosted runne
-     runs_on:
+     runs-on:
         - ubuntu-latest
      # Steps represent a sequence of tasks that will be executed as part of the job
      steps:
        # Runs command(s) using the runners shell and gets context from the github object
-        name: "Greet"
-        run:
+       - name: Greet
+         run:
           echo "Hello Workflow"
         
      
