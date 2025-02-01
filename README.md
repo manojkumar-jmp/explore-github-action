@@ -66,3 +66,5 @@ A workflow must have at least one job. A job is a section of the workflow associ
 **Actions**  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The actions inside your workflow are the standalone commands that are executed. These standalone commands can reference GitHub actions such as using your own custom actions, or community actions like the one we use in the preceding example, actions/checkout@v2. You can also run commands such as run: npm install -g bats to execute a command on the runner.
 https://learn.microsoft.com/en-us/training/modules/github-actions-automate-tasks/2c-configure-github-actions-workflow
+
+[![Hello Wokflow](https://github.com/manojkumar-jmp/explore-github-action/actions/workflows/hello-workflow.yml/badge.svg)](https://github.com/manojkumar-jmp/explore-github-action/actions/workflows/hello-workflow.yml)
