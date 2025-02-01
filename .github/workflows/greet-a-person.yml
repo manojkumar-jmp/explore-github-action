@@ -21,7 +21,7 @@ on:
 jobs:
    # This workflow contains a single job called "greet"
    greet-persion:
-   name: Greet a persion
+     name: Greet a persion
    runs-on:
      - ubuntu-latest
    setps:
