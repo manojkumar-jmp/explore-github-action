@@ -1,0 +1,24 @@
+# This is a basic workflow that is manually triggered
+
+# Display name of workflow
+name: Hello Wokflow
+on: 
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "say_hello"
+  say_hello:
+     # Display name for the job
+     name: "Say Hello to Workflow"
+     # The type of runner that the job will run on, in this case a Linus hosted runne
+     runs_on:
+        - ubuntu-latest
+     # Steps represent a sequence of tasks that will be executed as part of the job
+     steps:
+       # Runs command(s) using the runners shell and gets context from the github object
+        name: "Greet"
+        run:
+          echo "Hello Workflow"
+        
+     
