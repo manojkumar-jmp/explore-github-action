@@ -22,8 +22,8 @@ jobs:
    # This workflow contains a single job called "greet"
    greet-persion:
      name: Greet a persion
-   runs-on:
-     - ubuntu-latest
-   setps:
-     - name: Send greeting
-       run: echo "Hello ${{ github.event.inputs.name }}"
+     runs-on:
+       - ubuntu-latest
+     setps:
+       - name: Send greeting
+         run: echo "Hello ${{ github.event.inputs.name }}"
