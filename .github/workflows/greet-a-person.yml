@@ -23,8 +23,7 @@ jobs:
    greet-persion:
    name: Greet a persion
    runs-on:
-     - ubuntu-latest:
-       setps:
-         - name: Send greeting    
-           run:
-             echo "Hello ${{ github.event.inputs.name }}"
+     - ubuntu-latest
+   setps:
+     - name: Send greeting
+       run: echo "Hello ${{ github.event.inputs.name }}"
