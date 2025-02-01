@@ -1,8 +1,8 @@
-# this is basic workflow which will execute manualy and take on input from the user
+# This is a basic workflow that is manually triggered and take one input
 
-# Display name of the workflow
+# Display name of workflow
 name: Greet a persion
-on:
+on: 
   workflow_dispatch:
      # Inputs the workflow accepts.
      inputs:
