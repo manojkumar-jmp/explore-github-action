@@ -6,17 +6,17 @@ name: Greet a persion
 # Controls when the action will run. Workflow runs when manually triggered using the UI or API.
 on:
    workflow_dispatch:
-    # Inputs the workflow accepts.
-    inputs:
-      name:
-      # Friendly description to be shown in the UI instead of 'name'
-      description: "Persion to greet"
-      # Default value if no value is explicitly provided
-      default: "World"
-      # Input has to be provided for the workflow to run
-      required: true
-      # Input Type (string, choice, boolean)
-      type: string
+     # Inputs the workflow accepts.
+     inputs:
+       name: 
+        # Friendly description to be shown in the UI instead of 'name'
+        description: "Persion to greet"
+        # Default value if no value is explicitly provided
+        default: "World"
+        # Input has to be provided for the workflow to run
+        required: true
+        # Input Type (string, choice, boolean)
+        type: string
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
    # This workflow contains a single job called "greet"
@@ -24,6 +24,6 @@ jobs:
      name: Greet a persion
      runs-on:
        - ubuntu-latest
-     setps:
+     steps:
        - name: Send greeting
          run: echo "Hello ${{ github.event.inputs.name }}"
