@@ -1,5 +1,5 @@
 # Display name
-name: Multiple Jobs
+name: Job chain
 on:
   workflow_dispatch:
 jobs:
