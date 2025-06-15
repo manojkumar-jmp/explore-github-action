@@ -1,70 +1,57 @@
 # explore-github-action
-Explore GitHub Workflow  
-**Workflow**:  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The overall automated process that defines when and how different actions should be executed, triggered by events like pushing code to a repository or creating a pull request.  
-**Action**:  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An individual, modular step within a workflow, performing a specific task like running a unit test, deploying to a server, or checking code quality.  
-**How they work together**:  
-YAML configuration:  
-Both workflows and actions are defined using YAML syntax within the **.github/workflows** directory in your repository.  
-Combining actions:  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You can combine multiple actions from either the GitHub community or custom-built actions to create a complex workflow.  
-Triggering workflows:  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A workflow can be triggered by various events like pushing code, creating a pull request, or a scheduled time.  
 
-**A workflow must contain the following basic components:**
-1. One or more events that will trigger the workflow.
-2. One or more jobs, each of which will execute on a runner machine and run a series of one or more steps.
-3. Each step can either run a script that you define or run an action, which is a reusable extension that can simplify your workflow.
+Simple examples of GitHub Workflows, Jobs, Steps, and Actions. Learn how to automate CI/CD and other tasks using GitHub Actions.
 
-**A workflow trigger is an event that causes a workflow to run. There are four types of triggers:**
-1. Events happening in the workflow’s GitHub repository.
-2. Events occurring outside of GitHub, which trigger a repository_dispatch event in GitHub.
-3. A predefined schedule.
-4. Manual trigger
+## Overview
 
- ## Notes:-
- - GitHub Actions is a powerful automation platform that goes far beyond just CI/CD. While automating the CI/CD pipeline is one of the most popular use cases,
- - A GitHub Actions workflow is a process that you set up in your repository to automate software-development lifecycle tasks, including GitHub Actions
- - A "GitHub workflow" refers to a series of automated tasks defined in a YAML file within a GitHub repository, essentially a blueprint for a continuous integration and continuous delivery (CI/CD) pipeline, while a "GitHub action" is a single, reusable task within that workflow, like running a specific test or building a project, which can be combined to create a larger automated process.
- - A "GitHub workflow" refers to a series of automated tasks defined in a YAML file within a GitHub repository, essentially a blueprint for a continuous integration and continuous delivery (CI/CD) pipeline, while a "GitHub action" is a single, reusable task within that workflow, like running a specific test or building a project, which can be combined to create a larger automated process. 
- - GitHub Actions are packaged scripts to automate tasks in a software-development workflow in GitHub.
-	  - Ensure the code passes all unit tests.
-	  - Perform code quality and compliance checks to make sure the source code meets the organization's standards.
-	  - Check the code and its dependencies for known security issues.
-	  - Build the code integrating new source from (potentially) multiple contributors.
-	  - Ensure the software passes integration tests.
-	  - Version the new build.
-	  - Deliver the new binaries to the appropriate filesystem location.
-	  - Deploy the new binaries to one or more servers.
-	  - If any of these tasks don't pass, report the issue to the proper individual or team for resolution.
-  
+This repository provides easy-to-understand examples demonstrating how to use GitHub Actions to automate tasks such as building, testing, and deploying your code. It is intended for beginners and anyone interested in getting started with CI/CD and automation using GitHub Actions.
 
-**Types of GitHub actions**  
-There are three types of GitHub actions:
-- Container actions
-- JavaScript actions
-- Composite actions.
+## Features
 
-With container actions, the environment is part of the action's code. These actions can only be run in a Linux environment that GitHub hosts. Container actions support many different languages.
+- Example workflow files for typical CI/CD pipelines
+- Demonstrates the structure of workflows, jobs, steps, and actions
+- Shows how to use both built-in and custom actions
+- Clear, commented YAML files for easy learning
 
-JavaScript actions don't include the environment in the code. You'll have to specify the environment to execute these actions. You can run these actions in a VM (virtual machine) in the cloud or on-premises. JavaScript actions support Linux, macOS, and Windows environments.
+## Getting Started
 
-Composite actions allow you to combine multiple workflow steps within one action. For example, you can use this feature to bundle together multiple run commands into an action, and then have a workflow that executes the bundled commands as a single step using that action.
+1. **Fork or clone this repository:**
+   ```bash
+   git clone https://github.com/manojkumar-jmp/explore-github-action.git
+   ```
 
-A workflow must have at least one job. A job is a section of the workflow associated with a runner. A runner can be GitHub-hosted or self-hosted, and the job can run on a machine or in a container. 
+2. **Browse the `.github/workflows/` directory** to see ready-to-use workflow files.
 
-**Workflows**  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A workflow is an automated process that you add to your repository. A workflow needs to have at least one job, and different events can trigger it. You can use it to build, test, package, release, or deploy your repository's project on GitHub.
+3. **Adapt the examples** to your own repositories and automation needs.
 
-**Jobs**  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The job is the first major component within the workflow. A job is a section of the workflow that will be associated with a runner. A runner can be GitHub-hosted or self-hosted, and the job can run on a machine or in a container. You'll specify the runner with the runs-on: attribute. Here, you're telling the workflow to run this job on ubuntu-latest. We'll talk more about runners in the next unit.
+## Example
 
-**Steps**  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A step is an individual task that can run commands in a job. In our preceding example, the step uses the action actions/checkout@v2 to check out the repository. What's interesting is the uses: ./action-a value. This is the path to the container action that you'll build in an action.yml file.
+Below is a basic example of a workflow that runs on every push and prints "Hello, world!":
 
-**Actions**  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The actions inside your workflow are the standalone commands that are executed. These standalone commands can reference GitHub actions such as using your own custom actions, or community actions like the one we use in the preceding example, actions/checkout@v2. You can also run commands such as run: npm install -g bats to execute a command on the runner.
-https://learn.microsoft.com/en-us/training/modules/github-actions-automate-tasks/2c-configure-github-actions-workflow
+```yaml
+name: Hello World Workflow
 
-[![Hello Wokflow](https://github.com/manojkumar-jmp/explore-github-action/actions/workflows/hello-workflow.yml/badge.svg)](https://github.com/manojkumar-jmp/explore-github-action/actions/workflows/hello-workflow.yml)
+on: [push]
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print greeting
+        run: echo "Hello, world!"
+```
+
+Find more examples in the [`.github/workflows/`](.github/workflows/) directory.
+
+## Documentation
+
+- [GitHub Actions Documentation](https://docs.github.com/en/actions)
+- [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions)
+
+## Contributing
+
+Contributions are welcome! Please open issues or pull requests for improvements or new examples.
+
+## License
+
+This repository is licensed under the MIT License.
