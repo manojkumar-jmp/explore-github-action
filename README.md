@@ -1,3 +1,5 @@
+📘 See [DISCLAIMER](https://github.com/manojkumar-jmp/.github/blob/main/DISCLAIMER.md) for legal and usage disclaimers related to this repository.
+
 # explore-github-action
 
 Simple examples of GitHub Workflows, Jobs, Steps, and Actions. Learn how to automate CI/CD and other tasks using GitHub Actions.
